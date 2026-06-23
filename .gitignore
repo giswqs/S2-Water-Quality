@@ -1,0 +1,23 @@
+# Large data and generated products - not committed to git
+data/
+output/
+L2/
+
+# ACOLITE install (large external dependency) if placed inside the repo
+acolite_py_linux*/
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+.env
+
+# OS / editor
+.DS_Store

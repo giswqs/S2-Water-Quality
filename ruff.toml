@@ -1,0 +1,17 @@
+# The code/ modules use wildcard imports (`from MoE_VAE import *`) by design,
+# so ignore the related lint rules rather than rewriting the model code.
+line-length = 88
+
+[lint]
+ignore = [
+    "E402", # module-level import not at top of file
+    "F403", # wildcard import
+    "F405", # name may be undefined from wildcard import
+]
+
+# The code/ modules are vendored model/inference code; be lenient there.
+[lint.per-file-ignores]
+"code/*" = [
+    "E722", # bare except
+    "F841", # local variable assigned but never used
+]
