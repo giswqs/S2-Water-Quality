@@ -1,0 +1,42 @@
+# Python dependencies for the Sentinel-2 water-quality product workflow.
+# Pinned to the versions verified to work; relax as needed.
+#
+# NOTE: ACOLITE (atmospheric correction, L1C .SAFE -> L2W Rrs) ships its own
+# bundled Python runtime and is not pip-installable, but HyperCoast downloads
+# and runs it for you (hypercoast.download_acolite / run_acolite). Set
+# ACOLITE_DIR to reuse an existing install. The Sentinel-2 settings use the
+# `radcor` atmospheric-correction method, which requires a recent ACOLITE
+# release (2024 or newer).
+
+# Deep learning / inference
+torch>=2.6.0
+pytorch-lightning>=2.5.1
+scikit-learn>=1.8.0
+
+# Numerics
+numpy>=2.0
+scipy>=1.15
+
+# Geospatial raster / COG
+rasterio>=1.4
+rio-cogeo>=5.4
+rioxarray>=0.19
+
+# NetCDF / arrays
+xarray>=2025.3
+netCDF4>=1.7
+h5netcdf>=1.6
+
+# ACOLITE download/run helpers, gridding
+hypercoast>=0.27
+
+# Sentinel-2 search & download (Copernicus Data Space Ecosystem)
+requests>=2.31
+
+# Publishing products to the Hugging Face Hub
+huggingface_hub>=0.26
+
+# Tables & plotting (used by code/plot_and_save.py)
+pandas>=2.2
+matplotlib>=3.10
+seaborn>=0.13
