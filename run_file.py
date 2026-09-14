@@ -16,8 +16,8 @@ an existing install via the ``ACOLITE_DIR`` environment variable (or
 To process every scene in a folder, use ``run_folder.py``.
 """
 
-import os
 import argparse
+import os
 
 import torch
 

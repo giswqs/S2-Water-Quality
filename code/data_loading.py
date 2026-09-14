@@ -1,10 +1,9 @@
-import torch
 import numpy as np
-from torch.utils.data import DataLoader, TensorDataset
-from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
-from torch.utils.data import Subset
-from preprocess import RobustMinMaxScaler, LogScaler
+import torch
+from preprocess import LogScaler, RobustMinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
+from torch.utils.data import DataLoader, Subset, TensorDataset
 
 
 def load_real_data_Robust(
@@ -210,10 +209,10 @@ def build_real_train_test_by_date_robust(
     train_batch_size=1024,
 ):
 
-    import pandas as pd
     import numpy as np
+    import pandas as pd
     import torch
-    from torch.utils.data import TensorDataset, DataLoader
+    from torch.utils.data import DataLoader, TensorDataset
 
     # ================= READ =================
     df_rrs = pd.read_excel(excel_path, sheet_name="Rrs")
@@ -993,11 +992,11 @@ def build_real_test_loader(
     batch_size=4096,
 ):
 
-    import pandas as pd
     import numpy as np
+    import pandas as pd
     import torch
-    from torch.utils.data import TensorDataset, DataLoader
     from sklearn.preprocessing import MinMaxScaler
+    from torch.utils.data import DataLoader, TensorDataset
 
     # ================= READ =================
     df_rrs = pd.read_excel(excel_path, sheet_name="Rrs")
@@ -1113,10 +1112,10 @@ def build_real_test_loader_robust(
     batch_size=4096,
 ):
 
-    import pandas as pd
     import numpy as np
+    import pandas as pd
     import torch
-    from torch.utils.data import TensorDataset, DataLoader
+    from torch.utils.data import DataLoader, TensorDataset
 
     # ================= READ =================
     df_rrs = pd.read_excel(excel_path, sheet_name="Rrs")
