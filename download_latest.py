@@ -15,7 +15,7 @@ https://dataspace.copernicus.eu).
 import os
 from datetime import datetime, timedelta, timezone
 
-from s2_cdse import search_s2_l1c, download_s2
+from s2_cdse import download_s2, search_s2_l1c
 
 # Default to the shared data drive; fall back to a local folder if unmounted.
 DATA_DIR = os.environ.get("S2_DATA_DIR", "/media/hdd/Data/S2/data")
