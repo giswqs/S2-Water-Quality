@@ -1,10 +1,11 @@
-from pytorch_lightning import LightningModule
-import torch.nn as nn
+import os
+
+import numpy as np
 import torch
 import torch.nn.functional as F
+from pytorch_lightning import LightningModule
+from torch import nn
 from torch.distributions.normal import Normal
-import os
-import numpy as np
 
 
 class VAE(LightningModule):
@@ -119,7 +120,7 @@ class VAE(LightningModule):
         }
 
 
-class SparseDispatcher(object):
+class SparseDispatcher:
     """Helper for implementing a mixture of experts.
     The purpose of this class is to create input minibatches for the
     experts and to combine the results of the experts to form a unified
@@ -277,7 +278,7 @@ class MoE_VAE(LightningModule):
         use_softplus_output=False,
         **kwargs,
     ):
-        super(MoE_VAE, self).__init__()
+        super().__init__()
         self.noisy_gating = noisy_gating
         self.num_experts = num_experts
         self.output_dim = output_dim
@@ -544,7 +545,7 @@ class MoE_VAE_Token(LightningModule):
         use_softplus_output=False,
         **kwargs,
     ):
-        super(MoE_VAE_Token, self).__init__()
+        super().__init__()
         self.num_experts = num_experts
         self.input_dim = input_dim
         self.output_dim = output_dim
