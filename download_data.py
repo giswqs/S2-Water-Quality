@@ -17,10 +17,10 @@ the ``CDSE_USERNAME`` / ``CDSE_PASSWORD`` environment variables (register at
 https://dataspace.copernicus.eu). The catalogue search itself needs no login.
 """
 
-import os
 import argparse
+import os
 
-from s2_cdse import search_s2_l1c, download_s2
+from s2_cdse import download_s2, search_s2_l1c
 
 # Default to the shared data drive; fall back to a local folder if unmounted.
 DEFAULT_DATA_DIR = os.environ.get("S2_DATA_DIR", "/media/hdd/Data/S2/data")
