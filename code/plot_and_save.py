@@ -1,10 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-from scipy.stats import gaussian_kde
+import seaborn as sns
 from matplotlib.ticker import FuncFormatter
+from scipy.stats import gaussian_kde
 
 
 def calculate_metrics(predictions, actuals, threshold=0.8):
