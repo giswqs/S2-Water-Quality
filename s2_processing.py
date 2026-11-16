@@ -19,16 +19,16 @@ Entry points:
 * ``run_folder.py`` processes every ``.SAFE`` scene in a folder.
 """
 
+import glob
 import os
+import pickle
 import re
 import sys
-import glob
-import pickle
 from pathlib import Path
 
+import hypercoast
 import numpy as np
 import torch
-import hypercoast
 from rasterio.io import MemoryFile
 from rasterio.transform import from_origin
 from rio_cogeo.cogeo import cog_translate, cog_validate
@@ -38,13 +38,13 @@ from rio_cogeo.profiles import cog_profiles
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(BASE_DIR, "code"))
 
-from MoE_VAE import *  # noqa: E402,F401,F403
-from data_loading import *  # noqa: E402,F401,F403
-from plot_and_save import *  # noqa: E402,F401,F403
-from model_inference import (  # noqa: E402
+from data_loading import *
+from model_inference import (
     preprocess_and_infer_emit_minmax,
     preprocess_and_infer_emit_robust,
 )
+from MoE_VAE import *
+from plot_and_save import *
 
 # ===========================================================================
 # Band definitions (nm). Sentinel-2 MSI has a handful of discrete bands; the
@@ -250,7 +250,7 @@ def _build_model(
     Returns:
         MoE_VAE: The constructed (untrained) model on ``device``.
     """
-    return MoE_VAE(  # noqa: F405
+    return MoE_VAE(
         input_dim=input_dim,
         output_dim=1,
         latent_dim=16,
